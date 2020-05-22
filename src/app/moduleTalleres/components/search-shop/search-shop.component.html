@@ -1,0 +1,51 @@
+<div class="container" style="border: 1px solid blue">
+    <p>search-shop works!</p>
+    <div class="content_article p-2">
+        <h3 class="callback_title">Cenrtro de repuesta rápida de Allianz</h3>
+        <!-- <h4 class="sub_title mb-5">¿Tienes una urgencia?</h4> -->
+    </div>
+    <div class="search_talleres mt-3">
+        <!-- <form> -->
+        <div class="form-group w-75 m-auto">
+            <input #param type="text" (keyup)="searchTalleres(param.value)" class="form-control" placeholder="Población/codigo postal o dirección">
+        </div>
+        <!-- </form> -->
+    </div>
+    <div class="portlet_callback p-2">
+        <h1 class="m-5 callback_title">¡Te llamamos!</h1>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 shop-list__item mb-lg-3 mb-sm-3" *ngFor="let item of talleres | filter: {filter:searchParam}">
+                <div class="contact_card p-lg-5 p-md-5 p-3">
+
+                    <div class="d-flex justify-content-around align-items-center">
+                        <div class="distance__shop">
+                            <img class="shop__img" src="https://www.allianz.es/drpi42-portlet/media/img/icons/markerExcelente.png">
+                            <span class="shop__distance">{{item.distance}} km</span>
+                        </div>
+                        <div class="taller__info">
+                            <div class="taller__name">{{item.name}}</div>
+                            <div class="taller__address">
+                                <span>{{item.address}}</span>
+                                <span>{{item.postal}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center shop__contact">
+                        <p class="d-none d-md-block">
+                            <a href="'tel:'item.phone">{{item.phone}}</a>
+                        </p>
+                        <p class="d-md-none">
+                            <a href="'tel:'item.phone" class="btn btn-outline-primary btn__agendar">{{item.phone}}</a>
+                        </p>
+
+                        <button type="button" class="btn btn-outline-primary btn__agendar" (click)="seleccionarTaller( item )">
+                            <img src="https://www.allianz.es/drpi42-portlet/media/img/icons/calendar-blue.svg" alt=""> 
+                            <span> Agender cita</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

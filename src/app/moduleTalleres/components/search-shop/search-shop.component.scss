@@ -1,0 +1,182 @@
+.main_title {
+    color : #0078C7;
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: bold;
+}
+
+.sub_title {
+    font-size: 17.5px;
+    font-weight: bold;
+    font-family: inherit;
+    line-height: 20px;
+    margin: 10px 0;
+    text-rendering: optimizeLegibility;
+}
+
+.callback_title {
+    font-size: 18px;
+    line-height: 38px;
+    font-weight: bold;
+}
+
+/* TALLER CARD */
+.shop__contact {
+
+    .btn__agendar {
+        border-color: #b9b9b9;
+        font-size: 16px;
+        padding: 7px 12px;
+        background: linear-gradient(to bottom, #f1f1f1 0%, #f1f1f1 100%);
+    }
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .shop__contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > p {
+            margin: 5px;
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    /* For mobile phones: */
+    .shop__contact {
+        flex-direction: column;
+
+        & > p {
+            margin: 5px;
+        }
+    }
+}
+
+
+.contact_card {
+    border: 1px solid #eaeaea;
+    height: 100%;
+}
+
+.distance__shop {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3px;
+
+    .shop__img {
+        width: 50%;
+        margin: 2px;
+    }
+
+    .shop__distance{
+        font-size: 18px;
+        color: rgb(167, 172, 175);
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+}
+
+.taller__info {
+    color: #3b3b3b;
+
+    .taller__name {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1;
+    }
+    
+    .taller__address {
+        font-size: 14px;
+
+        span {
+            display: block;
+            padding-top: 10px;
+        }
+    }
+
+}
+
+
+
+
+/* SEARCH BAR */
+
+.search_talleres {
+
+    .form-group {
+        font-size: 17px;   
+    }
+
+    .form-control {
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+
+
+.portlet_callback {
+    font-family: "Open Sans", sans-serif;
+    color: rgba(51, 51, 51, 0.8);
+}
+
+/*
+.search_talleres > .form-group {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    /*text-align: center;
+}
+*/
+
+
+
+
+.img_portlet {
+    padding: 0;
+    width: auto;
+    max-width: 225px;
+    height: auto;
+    max-height: 193px;
+    margin: 50px;
+}
+
+.form-callback_subtitle {
+    line-height: 1.425;
+    font-size: 20px;
+    text-align: left;
+    margin: 0 0 10px;
+}
+
+.form-callback_title {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: inherit;
+    line-height: 20px;
+    margin: 10px 0;
+    text-rendering: optimizeLegibility;
+}
+
+.btn_callback {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn_invalid {
+    cursor: not-allowed;
+}
+
+.font_response {
+    font-size: 14px !important;
+}

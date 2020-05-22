@@ -1,0 +1,213 @@
+<p>cita-previa works!</p>
+<div class="p-3">
+    <h1 class="main_title mb-3">Concierta una cita con tu taller</h1>
+    <nav>
+        <ul class="nav_tabs">
+            <li [ngClass]="{'active' : step == '1', 'done' : step > '1'}">
+                <a href="#step-1"><span>1. Datos del taller</span></a>
+            </li>
+            <li [ngClass]="{'active' : step == '2', 'done' : step > '2'}">
+                <a href=""><span>2. Concierta tu cita</span></a>
+            </li>
+            <li [ngClass]="{'active' : step == '3', 'done' : step > '3'}">
+                <a href=""><span>3. Datos de la reparación</span></a>
+            </li>
+            <li [ngClass]="{'active' : step == '4', 'done' : step > '4'}">
+                <a href=""><span>4. Tus atos de contacto</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <form (ngSubmit)="handleSubmit(form, form.valid)" #form="ngForm">
+
+        <div [style.display]="step == 1 ? 'flex' : 'none'" class=" justify-content-around align-items-center pt-5 pb-5 taller__detail">
+            <div class="distance__shop">
+                <div>
+                    <input type="text" class="" id="name" name="name" [ngModel]="taller?.id" #name="ngModel" required>
+                    <p><b>Nombre del Taller:</b> {{taller?.name}}</p>
+                </div>
+                <!-- <img class="shop__img" src="https://www.allianz.es/drpi42-portlet/media/img/icons/markerExcelente.png"> -->
+                <div>
+                    <p class="shop__distance"><b>Dirección:</b> {{taller?.address}}</p>
+                </div>
+            </div>
+            <div class="taller__info">
+                <div class="taller__name">
+                    <p><b>Telefono:</b> {{taller?.phone}}</p>
+                </div>
+                <div class="taller__address">
+                    <p><b>CP:</b> {{taller?.postal}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div [style.display]="step == 2 ? 'block' : 'none'" class="pt-5 pb-5 hour_day">
+
+            <div class="">
+                <p class="mb-3">Indícanos la fecha y hora aproximadas que te convengan y te llamaremos para confirmar su disponibilidad.</p>
+            </div>
+            <input type="date">
+
+            <div class="d-flex justify-content-around align-items-center min_heigth"> -->
+
+                <div class="col-md-12">
+                    <label>
+                        <!-- <input nxDatefield nxInput [nxDatepicker]="myDatepicker1" [ngModel]="" #date="ngModel" name="date" required/>
+                        <span nxFormfieldHint>MM/DD/YYYY</span>
+                        <nx-datepicker-toggle [for]="myDatepicker1" nxFormfieldSuffix></nx-datepicker-toggle>
+                        <nx-datepicker #myDatepicker1></nx-datepicker> -->
+                    </label>
+                </div>
+
+                <div class="col-md-12">
+                    <label>
+                        <!-- <nx-dropdown [ngModel]="" #hour="ngModel" name="hour" required>
+                            <nx-dropdown-item nxValue="08:00"></nx-dropdown-item>
+                            <nx-dropdown-item nxValue="08:30"></nx-dropdown-item>
+                            <nx-dropdown-item nxValue="09:00"></nx-dropdown-item>
+                            <nx-dropdown-item nxValue="09:30"></nx-dropdown-item>
+                        </nx-dropdown> -->
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div [style.display]="step == 3 ? 'block' : 'none'" class="pt-5 pb-5 car_info">
+
+            <div class="d-flex justify-content-around min_heigth">
+
+                <div>
+                    <p class="text-initial">Selecciona la zona a reparar</p>
+
+                    <div class="position-relative">
+                        <div>
+                            <img class="car__img" src="https://www.allianz.es/drpi43-portlet/media/img/whitecar.jpg">
+                        </div>
+                        <div class="car__damage">
+
+                            <div class="div_input">
+                                <label class="" for="input1">
+                                    <input id="input1" class="" type="checkbox" name="parte1" value="top" [ngModel]="" #parte1="ngModel" />
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+
+                            <div class="div_input">
+                                <label class="" for="input2">
+                                    <input id="input2" class="" type="checkbox" name="parte2" value="top" [ngModel]="" #parte2="ngModel"/>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+
+
+                            <div class="div_input">
+                                <label class="" for="input3">
+                                    <input id="input3" class="" type="checkbox" name="parte3" value="top" [ngModel]="" #parte3="ngModel"/>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+
+                            <div class="div_input">
+                                <label class="" for="input4">
+                                    <input id="input4" class="" type="checkbox" name="parte4" value="top" [ngModel]="" #parte4="ngModel"/>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+
+                            <div class="div_input">
+                                <label class="" for="input5">
+                                    <input id="input5" class="" type="checkbox" name="parte5" value="top" [ngModel]="" #parte5="ngModel"/>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+
+                            <div class="div_input">
+                                <label class="" for="input6">
+                                    <input id="input6" class="" type="checkbox" name="parte6" value="top" [ngModel]="" #parte6="ngModel"/>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+
+                            <div class="div_input">
+                                <label class="" for="input7">
+                                    <input id="input7" class="" type="checkbox" name="parte7" value="top" [ngModel]="" #parte7="ngModel"/>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+
+                            <div class="div_input">
+                                <label class="" for="input8">
+                                    <input id="input8" class="" type="checkbox" name="parte8" value="top" [ngModel]="" #parte8="ngModel"/>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+
+                            <div class="div_input">
+                                <label class="" for="input9">
+                                    <input id="input9" class="" type="checkbox" name="parte9" value="top" [ngModel]="" #parte9="ngModel"/>
+                                    <span class="label"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="">
+                    <p>Selecciona si necesitas alguno de los siguientes servicios excelentes:</p>
+
+                    <div class="d-flex flex-direction-column align-items-center h-75">
+
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" name="terms1" [ngModel]="" #terms1="ngModel" id="defaultCheck1">
+                            <label class="custom-control-label" for="defaultCheck1">
+                                Solicito coche de sustitución
+                            </label>
+                            <img class="" src="https://www.allianz.es/drpi43-portlet/media/img/icons/tooltip.svg">
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" name="terms2" [ngModel]="" #terms2="ngModel" id="defaultCheck2">
+                            <label class="custom-control-label" for="defaultCheck2">
+                                Solicito recogida y entrega de mi vehículo
+                            </label>
+                            <img class="" src="https://www.allianz.es/drpi43-portlet/media/img/icons/tooltip.svg">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Car Matricula</label>
+                    <input name="matricula" [ngModel]="" #matricula="ngModel" class="form-control" required>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border p-2">
+            {{form.value | json }}
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary">Send</button>
+
+    </form>
+
+    <div class="nav_button d-flex justify-content-between">
+
+        <a *ngIf="step == 1" class="btn btn-outline-primary btn__back" [routerLink]="['']">Volver</a>
+
+        <button *ngIf="step != 1" type="button" class="btn btn-outline-primary btn__back" (click)="previousStep( step )">
+            <!-- <img src="https://www.allianz.es/drpi42-portlet/media/img/icons/calendar-blue.svg" alt="">  -->
+        <span> Anterior</span>
+        </button>
+
+        <button type="button" class="btn btn-outline-primary btn__continue" (click)="nextStep( step )">
+            <!-- <img src="https://www.allianz.es/drpi42-portlet/media/img/icons/calendar-blue.svg" alt="">  -->
+            <span> Siguiente</span>
+        </button>
+
+    </div>
+
+</div>

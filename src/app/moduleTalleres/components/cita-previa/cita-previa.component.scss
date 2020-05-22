@@ -1,0 +1,179 @@
+.main_title {
+    color : #3b3b3b;
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: bold;
+}
+
+.nav_tabs {
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    border-top: 2px solid #dedede;
+
+    a {
+        outline-style: none;
+        text-decoration: none;
+        pointer-events: none;
+        cursor: default;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: auto;
+        color: #dedede;
+        border-bottom: 4px solid #dedede;
+        height: 50px;
+    }
+
+    .active {
+        width: 35%;
+        color: #0178c7;
+        border-bottom: 4px solid #0078C7;
+        font-size: 16px;
+    }
+
+    .done {
+        width: 10%;
+        font-weight: 300;
+        color: #F4701C;
+        border-bottom: 4px solid #F4701C;
+    }
+}
+
+
+.opacity {
+    opacity: 0;
+    font-size: 1px;
+    display: none;
+  }
+  
+  
+  .div_input {
+    position: relative;
+    cursor:pointer;
+  }
+  /*** Styling Radio & Checkbox Input Fields (start here) ***/
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: rgba(230, 230, 230, 0.49);
+    transition: all 0.5s ease 0s;
+  }
+  
+  input[type="checkbox"] {
+      display: none;
+  }
+  
+  
+  input[type="checkbox"] + .label{
+      line-height: 3em;
+  }
+  
+  input[type="checkbox"]:checked + .label {
+      background: rgba(1, 120, 199, 0.3);
+      color: #030303
+  }
+  
+  input[type="checkbox"]:checked + .label:before {
+      border-color: #116913;
+  }
+
+  
+
+.taller__detail {
+    min-height: 30vh;
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.hour_day {
+    min-height: 30vh;
+
+    p {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .min_heigth {
+        min-height: 20vh;
+    }
+}
+
+.car_info {
+
+    .car__img {
+        width: 100%;
+    }
+    .car__damage {
+        display: flex;
+        flex-flow: wrap;
+        background: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .car__damage > div {
+        cursor: pointer;
+        border-left: 2px solid white;
+        border-bottom: 2px solid white;
+        width: 33%;
+    }
+    .car__damage > div:hover {
+        background: rgba(1, 120, 199, 0.3);
+    }
+
+    
+    input[type=checkbox] {
+        display: none;
+    }
+    
+
+    input[type=checkbox]:checked + div{
+        background: rgba(1, 120, 199, 0.3);
+    }
+
+
+}
+
+.nav_button {
+
+    .btn {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 8px 12px;
+    }
+
+    .btn__continue{
+        border: #5182b9;
+        background: linear-gradient(to bottom, #0488c2 0%, #005798 100%);
+        color: #ffffff;
+    }
+
+    .btn__back {
+        border-color: #004e92;
+        color: #004e92;
+        background: linear-gradient(to bottom, #f1f1f1 0%, #f1f1f1 100%);
+    }
+
+    
+
+}

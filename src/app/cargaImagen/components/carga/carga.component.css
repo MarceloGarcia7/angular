@@ -1,0 +1,28 @@
+input[type="file"]#uplaodFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+label[for="uplaodFile"] {
+    border-radius: 7px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #106BA0;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 12px !important;
+    text-transform: uppercase;
+    /*width: fit-content;*/
+    text-align: center;
+}
+
+.image {
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .15)
+}

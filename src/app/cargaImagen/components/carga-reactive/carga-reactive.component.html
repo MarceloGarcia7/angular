@@ -1,0 +1,94 @@
+<p>carga-reactive works!</p>
+<hr>
+<form autocomplete="off" [formGroup]="myForm" (ngSubmit)="submit()">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <ul class="list-group">
+                    <li *ngFor="let item of myForm.value.files; let i=index" class="p-2 m-1 list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <span>{{item.file.name}}</span>
+                        </div>
+                        <div class="float-right">
+                            <span class="mr-1">{{ item.file.size / 1024 + 1 | number : '.0-0' }} KB</span>
+                            <button type="button" (click)="handleDelete(i)" class="mr-1 btn btn-sm btn-outline-primary">Eliminar</button>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Ver</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label for="uplaodFile">Subir Images</label>
+                <input id="uplaodFile" formControlName="file" (change)="onFileChange($event)" type="file" class="form-control">
+            </div>
+            <div>
+                <div *ngFor="let item of myForm.value.files" class="image-preview m-3 text-center">
+                    <img class="image" [src]="item.url" height="auto" width="20%" />
+                </div>
+            </div>
+            <div class="progress ">
+                <div class="progress-bar " role="progressbar" [ngStyle]="{'width.%': progresBare}"></div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Nombre</label>
+                <div class="col-8">
+
+                    <input class="form-control" [ngClass]="!f.name.valid && f.name.touched ? 'is-invalid' : ''" formControlName="name" type="text" placeholder="Nombre">
+                    <small *ngIf="!f.name.valid && f.name.touched" class="form-text text-danger">Ingrese su nombre</small>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Apellido</label>
+                <div class="col-8">
+
+                    <input class="form-control" [ngClass]="apellidoValid ? 'is-invalid' : ''" formControlName="apellido" type="text" placeholder="Apellido">
+                    <small *ngIf="apellidoValid" class="form-text text-danger">Ingrese su apellido</small>
+                </div>
+            </div>
+
+            <div class="form-group m-5">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+        <!-- <div class="col-md-6">
+        <div class="text-center m-2 ">
+            <h4>Cargar Archivos</h4>
+            <button (click)="cargarImagenes() " [disabled]="archivos.length==0 " type="button " class="btn btn-sm btn-outline-primary m-1 ">Cargar</button>
+            <button type="button " class="btn btn-sm btn-outline-primary m-1 ">Limpiar</button>
+        </div>
+
+        <table class="table ">
+            <thead class="thead=dark ">
+                <tr>
+                    <th>Name</th>
+                    <th>Tamaño</th>
+                    <th>Progreso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let archivo of archivos">
+                    <td>{{archivo.nameFile}}</td>
+                    <td>{{archivo.archivo.size / 1024 / 1024 | number: '.2-2'}} MB</td>
+                    <td>
+                        <div class="progress ">
+                            <div class="progress-bar " role="progressbar " style="width: 25% "></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div> -->
+    </div>
+</form>
+<pre [style.color]="myForm.valid? 'green' : 'red'">
+    Estado Formulario: {{myForm.valid}}
+   
+    Status: {{ myForm.status}}
+</pre>
+<hr>
+<pre>
+    {{ myForm.value | json }}
+</pre>
